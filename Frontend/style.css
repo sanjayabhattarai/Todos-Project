@@ -1,9 +1,10 @@
 h3 {
-    color: blue
+    color: blue;
     font-size: 1.5em;
-    font: bold;
+    font-weight: bold; 
     text-align: center;
 }
+
 form {
     margin: 0 auto;
     width: 50%;
@@ -11,5 +12,4 @@ form {
     border: 1px solid #ccc;
     border-radius: 1em;
     background-color: rgb(139, 69, 210);
-
-}
+} 
