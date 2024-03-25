@@ -13,6 +13,6 @@ app.use('/', todoRouter);
 
 
 // Start the server
-const port = process.env.PORT 
+const port = process.env.PORT;
 app.listen(port);
     
