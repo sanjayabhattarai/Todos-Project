@@ -1,6 +1,6 @@
- drop database if exists todo;
- create database my_todo;
- use my_todo;
+ drop database if exists my_todo;
+ create database todo;
+ use todo;
 
 create table task (
 id serial primary key,

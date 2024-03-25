@@ -1,6 +1,6 @@
 
 ### Get Task
-GET http://localhost:3001/task
+GET http://localhost:3001/
 
 ### Create new Task
 POST http://localhost:3001/new HTTP/1.1
