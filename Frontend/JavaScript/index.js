@@ -4,30 +4,31 @@ import { Todos } from './class/Todos.js';
 
 const todos = new Todos(BACKEND_ROOT_URL);
 
+
+
+
 const list = document.querySelector('ul');
 const input = document.querySelector('input');
 
-input.disabled = false;
+input.disabled = true;
 
 const renderTask = (task) => {
     const li = document.createElement('li');
     li.setAttribute('class', 'list-group-item');
 
-   
-    if (task && task.id) {
-        li.setAttribute('data-key', task.id.toString());
+   li.setAttribute('data-key', task.getId().toString());
 
-    }
+     
     renderSpan(li, task.getText()); 
-    renderLink(li, task.id);
-    list.append(li);
+    renderLink(li, task.getId());
+    list.appendChild(li);
 }
 
 
 const renderSpan = (li, text) => {
-    const span = document.createElement('span');
-    span.textContent = text;
-    li.appendChild(span);
+    const span = li.appendChild(document.createElement('span'));
+    span.innerHTML = text;
+   
 }
 
 const renderLink = (li, id) => {
@@ -50,19 +51,6 @@ const renderLink = (li, id) => {
     li.appendChild(a);
 }
 
-const deleteTask = async (id) => {
-    try {
-        const response = await fetch(`${BACKEND_ROOT_URL}/delete/${id}`, {
-            method: 'DELETE'
-        });
-        if (!response.ok) {
-            throw new Error('Failed to delete task');
-        }
-    } catch (error) {
-        console.error('Error deleting task:', error);
-        alert('Failed to delete task');
-    }
-};
 
 const getTasks = () => {
     todos.getTasks()
